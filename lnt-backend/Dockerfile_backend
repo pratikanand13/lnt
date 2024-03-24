@@ -1,0 +1,20 @@
+
+FROM node:latest
+
+
+WORKDIR /app/lnt-backend
+
+COPY ./package*.json ./
+
+RUN npm install
+RUN npm install -g nodemon
+
+
+COPY . /app/lnt-backend
+
+
+
+EXPOSE 3000
+
+
+CMD ["npm", "start"]
